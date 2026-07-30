@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>And Family｜家族のための選択肢が見つかるコミュニティ - 日本マタニティフード協会</title>
+<meta name="description" content="And Family（アンドファミリー）は、一般社団法人日本マタニティフード協会が運営するママ・パパ・プレママ・プレパパのためのコミュニティ。専門家セミナー・商品モニター・交流会など、参加費無料。ご案内は公式LINEから。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF7E8;
+  --cream-deep:#F7EDD6;
+  --caramel:#C97F22;
+  --terracotta:#DD6F14;
+  --rose:#D88A8A;
+  --ink:#46341F;
+  --ink-soft:#7A6A53;
+  --white:#FFFFFF;
+  --line-green:#06C755;
+  --radius:22px;
+  --disp:'Zen Maru Gothic',sans-serif;
+  --body:'Zen Kaku Gothic New',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.9;
+  font-size:16px;
+  letter-spacing:.02em;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* ---------- 共通レイアウト ---------- */
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+section{padding:72px 0}
+.eyebrow{
+  display:inline-block;
+  font-family:var(--disp);font-weight:700;font-size:13px;
+  color:var(--caramel);letter-spacing:.22em;
+  border-bottom:2px dotted var(--caramel);
+  padding-bottom:4px;margin-bottom:18px;
+}
+h2{
+  font-family:var(--disp);font-weight:700;
+  font-size:clamp(24px,5.5vw,30px);
+  line-height:1.55;margin-bottom:26px;
+}
+p+p{margin-top:1.2em}
+
+/* ---------- 写真スロット ---------- */
+.ph{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--cream-deep);position:relative}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph figcaption{display:none}
+.ph.noimg{min-height:160px;border:2px dashed var(--caramel);display:flex;align-items:center;justify-content:center;background:transparent}
+.ph.noimg img{display:none}
+.ph.noimg figcaption{display:block;font-size:12.5px;color:var(--caramel);font-weight:700;text-align:center;padding:12px;line-height:1.7}
+.photo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:720px;margin:-34px auto 0;padding:0 24px;position:relative;z-index:2}
+.photo-strip .ph{aspect-ratio:4/3;box-shadow:0 8px 24px rgba(70,52,31,.14)}
+@media (max-width:560px){.photo-strip{grid-template-columns:1fr 1fr}.photo-strip .ph:nth-child(3){display:none}}
+.about-photo{margin-top:36px;aspect-ratio:16/8}
+.org-card .ph{aspect-ratio:16/10;border-radius:12px;margin-bottom:14px}
+.org-card .ph.noimg{min-height:90px}
+
+/* ---------- スクロールリビール ---------- */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- ヒーロー ---------- */
+.hero{
+  padding:88px 0 76px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(216,138,138,.14) 0 140px, transparent 141px),
+    radial-gradient(circle at 88% 70%, rgba(201,127,34,.12) 0 180px, transparent 181px),
+    var(--cream);
+  text-align:center;
+  position:relative;
+}
+.hero-badge{
+  display:inline-block;background:var(--white);
+  border:1.5px solid var(--cream-deep);
+  border-radius:999px;padding:7px 20px;
+  font-size:12.5px;font-weight:500;color:var(--ink-soft);
+  box-shadow:0 2px 10px rgba(70,52,31,.06);
+  margin-bottom:34px;
+}
+.tagline{
+  font-family:var(--disp);font-weight:900;
+  font-size:clamp(27px,7vw,42px);
+  line-height:1.7;
+}
+.tag-line1{display:block;color:var(--ink-soft)}
+.tag-koredeii{
+  position:relative;display:inline-block;color:var(--ink-soft);
+}
+.tag-koredeii::after{
+  content:"";position:absolute;left:-2%;right:-2%;top:54%;
+  height:3px;background:var(--rose);border-radius:3px;
+  transform:scaleX(0);transform-origin:left;
+  animation:strike .5s ease .9s forwards;
+}
+.tag-line2{display:block;margin-top:6px}
+.tag-koregaii{
+  position:relative;display:inline-block;padding:0 6px;z-index:0;
+}
+.tag-koregaii::before{
+  content:"";position:absolute;left:0;right:0;bottom:8%;height:46%;
+  background:linear-gradient(90deg,#F5C97B,#EBAE4E);
+  border-radius:6px;z-index:-1;
+  transform:scaleX(0);transform-origin:left;
+  animation:marker .6s cubic-bezier(.6,0,.3,1) 1.5s forwards;
+}
+@keyframes strike{to{transform:scaleX(1)}}
+@keyframes marker{to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){
+  .tag-koredeii::after,.tag-koregaii::before{animation:none;transform:scaleX(1)}
+}
+.hero-lead{
+  margin-top:34px;font-size:15.5px;color:var(--ink-soft);line-height:2.1;
+}
+.hero-lead strong{color:var(--ink);font-weight:700}
+
+/* ---------- LINEボタン ---------- */
+.btn-line{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--line-green);color:#fff;text-decoration:none;
+  font-family:var(--disp);font-weight:700;font-size:17px;
+  padding:17px 40px;border-radius:999px;
+  box-shadow:0 6px 20px rgba(6,199,85,.35);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.btn-line:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(6,199,85,.4)}
+.btn-line:focus-visible{outline:3px solid var(--caramel);outline-offset:3px}
+.btn-line svg{flex:none}
+.btn-note{margin-top:12px;font-size:12.5px;color:var(--ink-soft)}
+.hero .btn-line{margin-top:32px}
+
+/* ---------- About ---------- */
+.about{background:var(--white)}
+.about-quote{
+  font-family:var(--disp);font-weight:700;
+  font-size:clamp(19px,4.5vw,23px);line-height:2;
+  padding-left:20px;border-left:4px solid var(--caramel);
+  margin-bottom:28px;
+}
+.about-quote em{font-style:normal;color:var(--terracotta)}
+.fact-strip{
+  margin-top:36px;background:var(--cream);
+  border-radius:var(--radius);padding:24px 26px;
+  display:flex;gap:18px;align-items:center;flex-wrap:wrap;
+}
+.fact-num{
+  font-family:var(--disp);font-weight:900;
+  font-size:40px;color:var(--caramel);line-height:1;white-space:nowrap;
+}
+.fact-num small{font-size:16px;font-weight:700}
+.fact-text{font-size:13.5px;color:var(--ink-soft);line-height:1.8;flex:1;min-width:200px}
+
+/* ---------- 4つのこと ---------- */
+.acts{background:var(--cream)}
+.act-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+@media (max-width:560px){.act-grid{grid-template-columns:1fr}}
+.act-card{
+  background:var(--white);border-radius:var(--radius);
+  padding:26px 24px 24px;
+  box-shadow:0 3px 14px rgba(70,52,31,.06);
+  border-top:5px solid var(--card-c,var(--caramel));
+}
+.act-card:nth-child(1){--card-c:#C97F22}
+.act-card:nth-child(2){--card-c:#D88A8A}
+.act-card:nth-child(3){--card-c:#DD6F14}
+.act-card:nth-child(4){--card-c:#A98B4F}
+.act-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.act-icon{
+  width:44px;height:44px;flex:none;border-radius:14px;
+  background:color-mix(in srgb,var(--card-c) 14%,#fff);
+  display:flex;align-items:center;justify-content:center;
+}
+.act-icon svg{width:24px;height:24px;stroke:var(--card-c)}
+.act-title{font-family:var(--disp);font-weight:700;font-size:19px}
+.act-card ul{list-style:none}
+.act-card li{
+  font-size:13.5px;line-height:1.8;color:var(--ink-soft);
+  padding-left:16px;position:relative;margin-top:8px;
+}
+.act-card li::before{
+  content:"";position:absolute;left:2px;top:.72em;
+  width:6px;height:6px;border-radius:50%;background:var(--card-c);
+}
+.act-free{
+  margin-top:22px;background:var(--white);
+  border:2px dashed var(--caramel);border-radius:var(--radius);
+  padding:18px 24px;font-size:14px;line-height:1.9;
+}
+.act-free strong{color:var(--terracotta)}
+
+/* ---------- 特典 ---------- */
+.perks{background:var(--white)}
+.perk{
+  display:flex;gap:18px;align-items:flex-start;
+  background:var(--cream);border-radius:var(--radius);
+  padding:24px 26px;margin-top:16px;
+}
+.perk-icon{
+  flex:none;width:48px;height:48px;border-radius:16px;
+  background:var(--white);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 8px rgba(70,52,31,.08);
+}
+.perk-icon svg{width:26px;height:26px;stroke:var(--terracotta)}
+.perk h3{font-family:var(--disp);font-weight:700;font-size:16.5px;margin-bottom:6px}
+.perk p{font-size:13.5px;color:var(--ink-soft);line-height:1.85}
+
+/* ---------- 運営 ---------- */
+.org{background:var(--cream)}
+.org-lead{font-size:15px}
+.org-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+@media (max-width:560px){.org-cards{grid-template-columns:1fr}}
+.org-card{
+  background:var(--white);border-radius:18px;padding:22px 18px;
+  text-align:center;box-shadow:0 3px 14px rgba(70,52,31,.05);
+}
+.org-card .k{
+  font-family:var(--disp);font-weight:700;font-size:14.5px;
+  color:var(--caramel);margin-bottom:8px;
+}
+.org-card .v{font-size:12.5px;color:var(--ink-soft);line-height:1.75}
+
+/* ---------- お約束 ---------- */
+.rules{background:var(--white)}
+.rule{
+  display:flex;gap:14px;align-items:flex-start;margin-top:18px;
+  font-size:14.5px;line-height:1.9;
+}
+.rule svg{flex:none;width:24px;height:24px;stroke:var(--rose);margin-top:4px}
+.rule strong{display:block;font-family:var(--disp);font-weight:700;font-size:15.5px}
+.rule span{color:var(--ink-soft);font-size:13.5px}
+
+/* ---------- 最終CTA ---------- */
+.cta{
+  background:linear-gradient(180deg,var(--cream-deep),var(--cream));
+  text-align:center;padding:84px 0 96px;
+}
+.cta h2{margin-bottom:14px}
+.cta-lead{color:var(--ink-soft);font-size:15px;margin-bottom:36px}
+.qr-card{
+  display:inline-block;background:var(--white);
+  border-radius:26px;padding:26px 30px 20px;
+  box-shadow:0 8px 30px rgba(70,52,31,.12);
+  margin-bottom:30px;
+}
+.qr-card img{width:190px;height:190px;image-rendering:pixelated;margin:0 auto}
+.qr-card .cap{
+  margin-top:12px;font-size:12.5px;color:var(--ink-soft);
+  font-weight:500;
+}
+.cta-or{font-size:13px;color:var(--ink-soft);margin:4px 0 16px}
+.cta-note{
+  margin-top:44px;display:inline-block;
+  background:var(--white);border-radius:14px;
+  padding:14px 22px;font-size:13px;color:var(--ink-soft);line-height:1.8;
+}
+
+/* ---------- フッター ---------- */
+footer{
+  background:var(--ink);color:#EDE3D2;
+  padding:40px 0 110px;text-align:center;
+  font-size:12.5px;line-height:2;
+}
+footer .fname{font-family:var(--disp);font-weight:700;font-size:14px;margin-bottom:6px}
+
+/* ---------- 追従CTAバー ---------- */
+.stickybar{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(8px);
+  border-top:1px solid var(--cream-deep);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  display:flex;justify-content:center;
+  transform:translateY(110%);transition:transform .35s ease;
+}
+.stickybar.show{transform:none}
+.stickybar .btn-line{
+  padding:13px 28px;font-size:15px;width:100%;max-width:420px;
+  justify-content:center;box-shadow:0 4px 14px rgba(6,199,85,.3);
+}
+@media (prefers-reduced-motion:reduce){.stickybar{transition:none}}
+</style>
+</head>
+<body>
+
+<!-- ヒーロー -->
+<header class="hero">
+  <div class="wrap">
+    <span class="hero-badge">一般社団法人 日本マタニティフード協会 公式コミュニティ</span>
+    <h1 class="tagline">
+      <span class="tag-line1">知らないままの <span class="tag-koredeii">"これでいい"</span> より、</span>
+      <span class="tag-line2">知った上での <span class="tag-koregaii">"これがいい"</span> を。</span>
+    </h1>
+    <p class="hero-lead">
+      And Family（アンドファミリー）は、<br>
+      <strong>ママ・パパ・プレママ・プレパパのためのコミュニティ</strong>です。<br>
+      妊活中の方も、育児がひと段落した方も。家族を想うすべての人を歓迎します。
+    </p>
+    <a class="btn-line" href="https://lin.ee/6G6ifwV" id="heroCta">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.55 7.4 8.34 8.04.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1 .88.55 1.08-.46 5.83-3.44 7.96-5.89C21.46 13.42 22 11.85 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
+      公式LINEで参加する（無料）
+    </a>
+    <p class="btn-note">友だち追加だけでOK。ご案内はすべてLINEで届きます</p>
+  </div>
+</header>
+
+<!-- 写真ストリップ -->
+<div class="photo-strip">
+  <figure class="ph"><img src="images/community-1.jpg" alt="コミュニティイベントの様子" onerror="this.parentElement.classList.add('noimg')"><figcaption>ここに写真①<br>(イベント・交流会の様子)</figcaption></figure>
+  <figure class="ph"><img src="images/community-2.jpg" alt="店舗の様子" onerror="this.parentElement.classList.add('noimg')"><figcaption>ここに写真②<br>(店舗・商品)</figcaption></figure>
+  <figure class="ph"><img src="images/community-3.jpg" alt="親子の様子" onerror="this.parentElement.classList.add('noimg')"><figcaption>ここに写真③<br>(親子・メンバー)</figcaption></figure>
+</div>
+
+<!-- About -->
+<section class="about">
+  <div class="wrap rv">
+    <span class="eyebrow">ABOUT</span>
+    <h2>「正解」を配る場所では、<br>ありません。</h2>
+    <p class="about-quote">
+      信頼できる選択肢をあつめて、<br>
+      あなたが <em>「自分で選べる」</em> ようにする場所です。
+    </p>
+    <p>
+      人は、選択肢を知り、自分の意思で選べたときに、「わたしが選んだ」という実感を持てる。
+      その実感を、家族のことを想う一人ひとりに広げていく——それが、And Family というコミュニティです。
+    </p>
+    <p>
+      マタニティ期から、その先の人生まで。ここは「運営がつくる場所」ではなく、<strong>みんなで育てる場所</strong>。
+      ライフステージにそっと寄り添いながら、ほっとできる居場所や、大切な仲間との出会いが自然と広がっていきます。
+    </p>
+    <div class="fact-strip">
+      <div class="fact-num">約750<small>名</small></div>
+      <div class="fact-text">全国のメンバーが在籍中。管理栄養士・助産師・ママ・パパなど、多彩な顔ぶれが「食の安心」を軸に集まっています。</div>
+    </div>
+    <figure class="ph about-photo"><img src="images/about.jpg" alt="And Familyコミュニティの様子" onerror="this.parentElement.classList.add('noimg')"><figcaption>ここに横長写真<br>(セミナー・座談会など、コミュニティの雰囲気が伝わる1枚)</figcaption></figure>
+  </div>
+</section>
+
+<!-- 4つのこと -->
+<section class="acts">
+  <div class="wrap rv">
+    <span class="eyebrow">ACTIVITY</span>
+    <h2>あなたらしく参加できる<br>「4つのこと」</h2>
+    <p style="color:var(--ink-soft);font-size:14.5px;margin-bottom:28px">気になるもの・できることから、ご自身のペースで気軽にのぞいてみてください。</p>
+    <div class="act-grid">
+      <div class="act-card">
+        <div class="act-head">
+          <span class="act-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+          <span class="act-title">① 知る</span>
+        </div>
+        <ul>
+          <li>専門家セミナーや専門講座の受講</li>
+          <li>認定商品や企業の想いを知る記事コンテンツ</li>
+        </ul>
+      </div>
+      <div class="act-card">
+        <div class="act-head">
+          <span class="act-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <span class="act-title">② つながる</span>
+        </div>
+        <ul>
+          <li>テーマ別交流部屋・オフ会・助産師相談会への参加</li>
+          <li>SNSやアプリ内でのいいね・コメント交流</li>
+        </ul>
+      </div>
+      <div class="act-card">
+        <div class="act-head">
+          <span class="act-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
+          <span class="act-title">③ 選ぶ</span>
+        </div>
+        <ul>
+          <li>みんなのリアルがわかるアンケート回答</li>
+          <li>話題の新商品モニター・サンプル体験（毎月多数！）</li>
+        </ul>
+      </div>
+      <div class="act-card">
+        <div class="act-head">
+          <span class="act-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          <span class="act-title">④ 活躍・巡る</span>
+        </div>
+        <ul>
+          <li>モニター商品のInstagram発信（SNS PR活動）</li>
+          <li>体験談投稿やイベント幹事へのチャレンジ</li>
+          <li>協会・加盟企業の求人情報のチェック</li>
+        </ul>
+      </div>
+    </div>
+    <div class="act-free">
+      <strong>ノルマや費用負担はありません。</strong>活動は完全自由・マイペースでOK。金銭的なご負担なくご参加いただけます。
+    </div>
+  </div>
+</section>
+
+<!-- 特典 -->
+<section class="perks">
+  <div class="wrap rv">
+    <span class="eyebrow">BENEFITS</span>
+    <h2>メンバー限定の特典も</h2>
+    <div class="perk">
+      <span class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+      <div>
+        <h3>店舗＆オンラインショップの会員限定クーポン</h3>
+        <p>「Tokyo Family Marche（有明ガーデン／府中フォーリス店／ONLINE）」で使える、お得な特別クーポンを配布中。</p>
+      </div>
+    </div>
+    <div class="perk">
+      <span class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></span>
+      <div>
+        <h3>友達紹介特典</h3>
+        <p>ご友人を紹介していただくと、ONLINEで使える500円分クーポンをプレゼント。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 運営 -->
+<section class="org">
+  <div class="wrap rv">
+    <span class="eyebrow">ORGANIZER</span>
+    <h2>運営について</h2>
+    <p class="org-lead">
+      And Family は、<strong>一般社団法人日本マタニティフード協会</strong>が運営しています。
+      家族にとって信頼できる選択肢をあつめ、届ける活動を続けています。
+    </p>
+    <div class="org-cards">
+      <div class="org-card">
+        <figure class="ph"><img src="images/org-nintei.jpg" alt="マタニティフード認定マーク" onerror="this.parentElement.classList.add('noimg')"><figcaption>認定マーク画像</figcaption></figure>
+        <div class="k">マタニティフード認定</div>
+        <div class="v">妊娠中・授乳中の方が安心して手に取れる食品の認定制度</div>
+      </div>
+      <div class="org-card">
+        <figure class="ph"><img src="images/org-store.jpg" alt="Tokyo Family Marche 店舗" onerror="this.parentElement.classList.add('noimg')"><figcaption>店舗写真</figcaption></figure>
+        <div class="k">Tokyo Family Marche</div>
+        <div class="v">有明ガーデン／府中フォーリスのリアル店舗＆オンラインショップ</div>
+      </div>
+      <div class="org-card">
+        <figure class="ph"><img src="images/org-box.jpg" alt="ハッピーマタニティBOX" onerror="this.parentElement.classList.add('noimg')"><figcaption>BOX写真</figcaption></figure>
+        <div class="k">ハッピーマタニティBOX</div>
+        <div class="v">プレママへ届ける、認定商品を詰め合わせたギフトボックス</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お約束 -->
+<section class="rules">
+  <div class="wrap rv">
+    <span class="eyebrow">PROMISE</span>
+    <h2>みんなで大切にしたいこと</h2>
+    <p style="font-size:14.5px;color:var(--ink-soft)">みんなが心地よくポジティブに過ごせるよう、次の点をご協力お願いいたします。</p>
+    <div class="rule">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <div>
+        <strong>お互いを尊重した温かいコミュニケーション</strong>
+        <span>否定・中傷・マウント行為はご遠慮ください</span>
+      </div>
+    </div>
+    <div class="rule">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <div>
+        <strong>安心できる空間づくり</strong>
+        <span>勧誘行為・ハラスメント・コミュニティ内情報の外部持ち出しは禁止です</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="cta" id="join">
+  <div class="wrap rv">
+    <span class="eyebrow">JOIN US</span>
+    <h2>参加はこちらから</h2>
+    <p class="cta-lead">最新情報・イベント・モニター募集のご案内は、<br>すべて公式LINEでお届けしています。</p>
+    <div class="qr-card">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB1xeIbAAAB3klEQVR4nO2ZS67cIBBFTwWkDG2pFwRbzg7spbwdmGFLWDcDoO28STJx/GWATPlIvsIFqo+Jv4/xxz9A8FAPdSIqWR2RuTxA8jSr30vXLSgnSRIkj6SMRYAgSZr203UPqrp3GU4agHIg4q667kVZTGb/9Yv3pfx60Qkge8bodtZ1B6rs/RJoGt0kgqD+irSPrrtQ6+iG8OWxmDyMZmbW76fr6pStc6v0ysUILq/sT261FZXqnW+R2RjNDJhbuN/vpuvyVNl3C796RHLZgprfj0u8c1T1l6Esdm/T8IkxgzIa0pPXbkWVRFZDSW4z0vTJraAtj6r+3BS1aoATJaXtJGlygvb07P02VPVsTVC8PXy2fVimo6o/N1VjnDG6bEGzF7wNkqE6+Xxc9eemmt+3q54w1bKmhi6XY/D4/ZaUWe9ksRlrOT/9FHR5R13XptBqNJevzr+cgKOqPz219K26dynqaAAsAjXrPbD6E1OeT+3GwMnoMozRoVLCfO6czahaU/hWPIPZANdeHFX9lajZCF9mFnGqNYVD6Lom5b+tBdkTBhDMnjC9dtF1B+rPvpUTpB6RejRGp6dvtSHlqXc7QHrlVZ88aG6dlaOqPzflW4ccgNxOQLG5J7d6qGtSvwGWbgQwF93kdwAAAABJRU5ErkJggg==" alt="And Family 公式LINE 友だち追加QRコード" width="190" height="190">
+      <div class="cap">スマホのカメラで読み取ってください</div>
+    </div>
+    <p class="cta-or">スマートフォンでご覧の方はこちらをタップ</p>
+    <a class="btn-line" href="https://lin.ee/6G6ifwV">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.55 7.4 8.34 8.04.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1 .88.55 1.08-.46 5.83-3.44 7.96-5.89C21.46 13.42 22 11.85 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
+      友だち追加して参加する
+    </a>
+    <div class="cta-note">
+      ※ 現在、説明会は実施しておりません。<br>
+      コミュニティのご案内・ご参加方法は、すべて公式LINEにてお伝えしています。
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fname">一般社団法人 日本マタニティフード協会</div>
+    <div>And Family — 家族の笑顔につながる安心な選択肢をあつめる</div>
+  </div>
+</footer>
+
+<!-- 追従CTAバー -->
+<div class="stickybar" id="stickybar">
+  <a class="btn-line" href="https://lin.ee/6G6ifwV">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.55 7.4 8.34 8.04.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1 .88.55 1.08-.46 5.83-3.44 7.96-5.89C21.46 13.42 22 11.85 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
+    公式LINEで参加する（無料）
+  </a>
+</div>
+
+<script>
+// スクロールリビール
+const io = new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+},{threshold:0.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// 追従バー: ヒーローCTAが画面外に出たら表示、最終CTAが見えたら隠す
+const bar = document.getElementById('stickybar');
+const heroCta = document.getElementById('heroCta');
+const join = document.getElementById('join');
+let heroOut=false, joinIn=false;
+const update=()=>{ bar.classList.toggle('show', heroOut && !joinIn); };
+new IntersectionObserver(es=>{ heroOut = !es[0].isIntersecting; update(); }).observe(heroCta);
+new IntersectionObserver(es=>{ joinIn = es[0].isIntersecting; update(); },{threshold:0.2}).observe(join);
+</script>
+</body>
+</html>
