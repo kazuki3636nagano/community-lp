@@ -157,8 +157,14 @@ p+p{margin-top:1.2em}
 .fact-strip{
   margin-top:36px;background:var(--cream);
   border-radius:var(--radius);padding:24px 26px;
-  display:flex;gap:18px;align-items:center;flex-wrap:wrap;
 }
+.fact-illust{
+  width:100%;aspect-ratio:16/7;margin-bottom:20px;
+  background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(70,52,31,.10);
+}
+.fact-illust img{object-fit:cover}
+.fact-illust.noimg{aspect-ratio:auto}
+.fact-body{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 .fact-num{
   font-family:var(--disp);font-weight:900;
   font-size:40px;color:var(--caramel);line-height:1;white-space:nowrap;
@@ -344,8 +350,11 @@ footer .fname{font-family:var(--disp);font-weight:700;font-size:14px;margin-bott
       ライフステージにそっと寄り添いながら、ほっとできる居場所や、大切な仲間との出会いが自然と広がっていきます。
     </p>
     <div class="fact-strip">
-      <div class="fact-num">約750<small>名</small></div>
-      <div class="fact-text">全国のメンバーが在籍中。管理栄養士・助産師・ママ・パパなど、多彩な顔ぶれが「食の安心」を軸に集まっています。</div>
+      <figure class="ph fact-illust"><img src="images/family-illust.png" alt="妊活中から育児中まで、多彩な家族やメンバーが並んでいるイラスト" onerror="this.parentElement.classList.add('noimg')"><figcaption>ここに「約750名」のイメージイラスト<br>(多様な家族が横に並ぶ横長イラスト)</figcaption></figure>
+      <div class="fact-body">
+        <div class="fact-num">約750<small>名</small></div>
+        <div class="fact-text">全国のメンバーが在籍中。管理栄養士・助産師・ママ・パパなど、多彩な顔ぶれが「食の安心」を軸に集まっています。</div>
+      </div>
     </div>
     <figure class="ph about-photo"><img src="images/about.jpg" alt="And Familyコミュニティの様子" onerror="this.parentElement.classList.add('noimg')"><figcaption>ここに横長写真<br>(セミナー・座談会など、コミュニティの雰囲気が伝わる1枚)</figcaption></figure>
   </div>
