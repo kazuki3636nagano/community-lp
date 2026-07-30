@@ -1,0 +1,10 @@
+# OS / エディタ
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# ローカル確認用の一時ファイル
+*.log
+.cache/
